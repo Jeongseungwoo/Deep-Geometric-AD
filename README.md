@@ -1,1 +1,2 @@
-# Deep_Geometric_AD-
+# Deep Geometrical Prediction and Classification
+for Alzheimer’s Disease Progression
