@@ -1,2 +1,1 @@
-# Deep Geometrical Prediction and Classification
-for Alzheimer’s Disease Progression
+# Deep Geometrical Prediction and Classification for Alzheimer’s Disease Progression
