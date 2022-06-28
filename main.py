@@ -145,15 +145,15 @@ def main(args):
             mauc, m_acc, m_sen, m_spec, m_prec, m_recall, data, ret = test_op(model, dataloaders, criterion_imputation, type='test')
             valid_mauc, _, _, _, _, _, _, _ = test_op(model, dataloaders, criterion_imputation, type='valid')
 
-            plot_mape_cog1, plot_r2_cog1 = regression_cog(f, ret['predict_mmse'].data.cpu().numpy(),
+            plot_mape_cog1, plot_r2_cog1 = regression_cog(ret['predict_mmse'].data.cpu().numpy(),
                                                           data['data'][:, 1:, 6:7].data.cpu().numpy(),
                                                           data['mask'][:, 1:, 6:7].data.cpu().numpy(),
                                                           original_cog=np.array([30]))
-            plot_mape_cog2, plot_r2_cog2 = regression_cog(f, ret['predict_ad11'].data.cpu().numpy(),
+            plot_mape_cog2, plot_r2_cog2 = regression_cog(ret['predict_ad11'].data.cpu().numpy(),
                                                           data['data'][:, 1:, 7:8].data.cpu().numpy(),
                                                           data['mask'][:, 1:, 7:8].data.cpu().numpy(),
                                                           original_cog=np.array([70]))
-            plot_mape_cog3, plot_r2_cog3 = regression_cog(f, ret['predict_ad13'].data.cpu().numpy(),
+            plot_mape_cog3, plot_r2_cog3 = regression_cog(ret['predict_ad13'].data.cpu().numpy(),
                                                           data['data'][:, 1:, 8:9].data.cpu().numpy(),
                                                           data['mask'][:, 1:, 8:9].data.cpu().numpy(),
                                                           original_cog=np.array([85]))
