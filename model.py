@@ -68,7 +68,7 @@ class ODERGRU_imputation(nn.Module):
                 x_d, x_l = self.encoder(s_h, torch.ones(mask.shape[0], mask.shape[1], device=s.device))
             hp = odeint(self.odefunc,
                         torch.cat((h_d.log(), h_l), dim=1),
-                        times[i:i + 2].flip(0),
+                        times[i:i + 2],
                         rtol=1e-4,
                         atol=1e-5,
                         method='euler')[1]
